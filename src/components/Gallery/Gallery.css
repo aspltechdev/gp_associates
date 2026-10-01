@@ -1,63 +1,95 @@
+/* =========================================================
+   GALLERY
+========================================================= */
+
 .gallery {
   position: relative;
+
   overflow: hidden;
 
-  background: #f5faf7;
+  background: #fafbf5;
 }
 
+
 .gallery-container {
-  width: min(100% - 40px, 1240px);
+  width: min(
+    100% - 40px,
+    1240px
+  );
+
   margin: 0 auto;
 }
 
 
-/* =========================================
+/* =========================================================
    HEADER
-========================================= */
+========================================================= */
 
 .gallery-header {
-  margin-bottom: 55px;
+  margin-bottom: 48px;
 }
+
 
 .gallery-label {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   color: #2f8a4a;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
+
   letter-spacing: 2px;
 }
 
-.gallery-label span {
+
+.gallery-label > span {
   width: 30px;
   height: 2px;
 
-  background: #f2c928;
+  flex-shrink: 0;
 
-  border-radius: 10px;
+  border-radius: 20px;
+
+  background: #f2c928;
 }
+
 
 .gallery-heading {
   display: grid;
 
-  grid-template-columns: 1.1fr 0.9fr;
-
-  gap: 80px;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
 
   align-items: end;
+
+  gap: 80px;
 
   margin-top: 20px;
 }
 
+
 .gallery-heading h2 {
+  max-width: 720px;
+
+  margin: 0;
+
   color: #123426;
 
-  font-family: "Manrope", sans-serif;
+  font-family:
+    "Manrope",
+    sans-serif;
 
-  font-size: clamp(2.7rem, 5vw, 4.7rem);
+  font-size:
+    clamp(
+      2.7rem,
+      5vw,
+      4.6rem
+    );
 
   font-weight: 700;
 
@@ -65,6 +97,7 @@
 
   letter-spacing: -3px;
 }
+
 
 .gallery-heading h2 em {
   display: block;
@@ -74,22 +107,25 @@
   font-style: normal;
 }
 
+
 .gallery-heading p {
-  max-width: 460px;
+  max-width: 450px;
+
+  margin: 0;
 
   color: #667a70;
 
-  font-size: 15px;
+  font-size: 14px;
 
   line-height: 1.8;
 }
 
 
-/* =========================================
-   GRID
-========================================= */
+/* =========================================================
+   FEATURED 4 IMAGE GRID
+========================================================= */
 
-.gallery-grid {
+.featured-gallery {
   display: grid;
 
   grid-template-columns:
@@ -105,85 +141,116 @@
 }
 
 
-/* =========================================
-   ITEMS
-========================================= */
+/* =========================================================
+   FEATURED CARD
+========================================================= */
 
-.gallery-item {
+.featured-item {
   position: relative;
 
   overflow: hidden;
+
+  cursor: pointer;
 
   border-radius: 22px;
 
   background: #dceee2;
 
-  cursor: pointer;
+  isolation: isolate;
 }
 
-.gallery-large {
+
+.featured-large {
+  grid-column: 1;
   grid-row: 1 / 3;
 }
 
-.gallery-small {
+
+.featured-small {
   grid-row: 1;
 }
 
-.gallery-wide {
+
+.featured-wide {
   grid-column: 2 / 4;
   grid-row: 2;
 }
 
-.gallery-item img {
+
+/* =========================================================
+   FEATURED IMAGE
+========================================================= */
+
+.featured-item > img {
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
 
+  object-position: center;
+
   transition:
-    transform 0.8s cubic-bezier(0.2, 0.65, 0.25, 1);
+    transform
+    0.8s
+    cubic-bezier(
+      0.2,
+      0.65,
+      0.25,
+      1
+    );
 }
 
-.gallery-item:hover img {
-  transform: scale(1.06);
+
+.featured-item:hover > img {
+  transform:
+    scale(1.045);
 }
 
 
-/* =========================================
-   OVERLAY
-========================================= */
+/* =========================================================
+   FEATURED OVERLAY
+========================================================= */
 
-.gallery-overlay {
+.featured-overlay {
   position: absolute;
+
+  z-index: 1;
 
   inset: 0;
 
   background:
     linear-gradient(
       to top,
-      rgba(18, 52, 38, 0.75),
-      rgba(18, 52, 38, 0.05) 65%
+      rgba(
+        11,
+        55,
+        34,
+        0.82
+      )
+      0%,
+      rgba(
+        11,
+        55,
+        34,
+        0.23
+      )
+      43%,
+      transparent
+      72%
     );
-
-  transition: background 0.4s ease;
 }
 
-.gallery-item:hover .gallery-overlay {
-  background:
-    linear-gradient(
-      to top,
-      rgba(18, 52, 38, 0.85),
-      rgba(18, 52, 38, 0.12) 70%
-    );
-}
 
+/* =========================================================
+   FEATURED CONTENT
+========================================================= */
 
-/* =========================================
-   CONTENT
-========================================= */
-
-.gallery-content {
+.featured-content {
   position: absolute;
+
+  z-index: 3;
 
   left: 25px;
   right: 25px;
@@ -192,272 +259,978 @@
   display: flex;
 
   align-items: flex-end;
-
   justify-content: space-between;
 
-  gap: 20px;
-
-  z-index: 2;
+  gap: 15px;
 }
 
-.gallery-content span {
+
+.featured-content span {
   display: block;
 
   margin-bottom: 5px;
 
   color: #f8df68;
 
-  font-size: 8px;
-
+  font-size: 7px;
   font-weight: 800;
 
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
+  letter-spacing: 1.4px;
 }
 
-.gallery-content h3 {
+
+.featured-content h3 {
+  margin: 0;
+
   color: #ffffff;
 
-  font-family: "Manrope", sans-serif;
+  font-family:
+    "Manrope",
+    sans-serif;
 
-  font-size: 19px;
+  font-size: 18px;
 
   font-weight: 700;
 }
 
-.gallery-arrow {
+
+/* =========================================================
+   FEATURED ARROW
+========================================================= */
+
+.featured-arrow {
   width: 40px;
   height: 40px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   flex-shrink: 0;
 
-  border-radius: 50%;
-
   color: #ffffff;
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
 
-  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 
-  backdrop-filter: blur(8px);
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
 
   transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+    color
+    0.3s ease,
+    background
+    0.3s ease,
+    transform
+    0.3s ease;
 }
 
-.gallery-item:hover .gallery-arrow {
-  background: #f8df68;
 
+.featured-item:hover
+.featured-arrow {
   color: #123426;
 
-  transform: translate(2px, -2px);
+  background: #f8df68;
+
+  transform:
+    translate(
+      2px,
+      -2px
+    );
 }
 
 
-/* =========================================
-   MESSAGE TILE
-========================================= */
+/* =========================================================
+   COLLECTION HEADER
+========================================================= */
 
-.gallery-message {
-  grid-column: 3;
+.gallery-collection-header {
+  margin:
+    70px
+    0
+    32px;
 
-  grid-row: 2;
+  padding-bottom: 22px;
 
-  padding: 28px;
+  display: flex;
 
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      47,
+      138,
+      74,
+      0.12
+    );
+}
+
+
+.gallery-collection-header > div {
   display: flex;
 
   flex-direction: column;
 
-  justify-content: center;
-
-  border-radius: 22px;
-
-  background: #126b3a;
-
-  color: #ffffff;
+  gap: 8px;
 }
 
-.gallery-message-icon {
-  width: 42px;
-  height: 42px;
+
+.gallery-collection-header span {
+  color: #2f8a4a;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+.gallery-collection-header h3 {
+  margin: 0;
+
+  color: #123426;
+
+  font-family:
+    "Manrope",
+    sans-serif;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+.gallery-collection-header p {
+  max-width: 410px;
+
+  margin: 0;
+
+  color: #74847b;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PINTEREST / MASONRY GALLERY
+
+   Natural image ratio.
+   No forced square.
+========================================================= */
+
+.gallery-masonry {
+  width: 100%;
+
+  column-count: 5;
+
+  column-gap: 12px;
+}
+
+
+/* =========================================================
+   MASONRY ITEM
+========================================================= */
+
+.masonry-item {
+  width: 100%;
+
+  display: inline-block;
+
+  margin:
+    0
+    0
+    12px;
+
+  padding: 0;
+
+  break-inside: avoid;
+
+  cursor: pointer;
+
+  border: none;
+
+  background: transparent;
+
+  vertical-align: top;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.masonry-image {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #eaf0e4;
+
+  box-shadow:
+    0 4px 16px
+    rgba(
+      18,
+      52,
+      38,
+      0.055
+    );
+
+  isolation: isolate;
+
+  transition:
+    transform
+    0.3s ease,
+    box-shadow
+    0.3s ease;
+}
+
+
+/* =========================================================
+   NATURAL IMAGE DIMENSIONS
+
+   IMPORTANT:
+   height: auto keeps original ratio.
+========================================================= */
+
+.masonry-image > img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  transition:
+    transform
+    0.5s
+    cubic-bezier(
+      0.2,
+      0.65,
+      0.25,
+      1
+    );
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.masonry-item:hover
+.masonry-image {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 13px 28px
+    rgba(
+      20,
+      68,
+      43,
+      0.14
+    );
+}
+
+
+.masonry-item:hover
+.masonry-image > img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   HOVER OVERLAY
+========================================================= */
+
+.masonry-hover {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  padding: 9px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        6,
+        51,
+        30,
+        0.15
+      ),
+      transparent
+      35%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity
+    0.3s ease;
+}
+
+
+.masonry-item:hover
+.masonry-hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   VIEW ICON
+========================================================= */
+
+.masonry-view {
+  width: 32px;
+  height: 32px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
-
-  margin-bottom: 20px;
-
-  border-radius: 13px;
-
-  color: #f8df68;
-
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.gallery-message > span {
-  color: #65b957;
-
-  font-size: 8px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.7px;
-}
-
-.gallery-message strong {
-  max-width: 200px;
-
-  margin-top: 7px;
 
   color: #ffffff;
 
-  font-family: "Manrope", sans-serif;
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
 
-  font-size: 15px;
+  border-radius: 50%;
 
-  line-height: 1.5;
+  background:
+    rgba(
+      13,
+      77,
+      45,
+      0.72
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   LIGHTBOX
+========================================================= */
 
-@media (max-width: 950px) {
+.gallery-lightbox {
+  position: fixed;
+
+  z-index: 99999;
+
+  inset: 0;
+
+  padding:
+    35px
+    90px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(
+      3,
+      27,
+      17,
+      0.95
+    );
+
+  backdrop-filter:
+    blur(15px);
+
+  -webkit-backdrop-filter:
+    blur(15px);
+}
+
+
+/* =========================================================
+   LIGHTBOX CONTENT
+========================================================= */
+
+.lightbox-content {
+  width: min(
+    1100px,
+    100%
+  );
+
+  height: min(
+    86vh,
+    900px
+  );
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   COMPLETE IMAGE
+========================================================= */
+
+.lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.lightbox-close {
+  position: fixed;
+
+  z-index: 100001;
+
+  top: 24px;
+  right: 24px;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  transition:
+    color
+    0.3s ease,
+    background
+    0.3s ease;
+}
+
+
+.lightbox-close:hover {
+  color: #123426;
+
+  background: #f8df68;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.lightbox-navigation {
+  position: fixed;
+
+  z-index: 100001;
+
+  top: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    color
+    0.3s ease,
+    background
+    0.3s ease;
+}
+
+
+.lightbox-navigation:hover {
+  color: #123426;
+
+  background: #f8df68;
+}
+
+
+.lightbox-previous {
+  left: 24px;
+}
+
+
+.lightbox-next {
+  right: 24px;
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .gallery-masonry {
+    column-count: 4;
+
+    column-gap: 11px;
+  }
+
+
+  .masonry-item {
+    margin-bottom: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
 
   .gallery-heading {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
-    gap: 20px;
+    gap: 18px;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
+
+  /* FEATURED */
+
+  .featured-gallery {
+    grid-template-columns:
+      1fr
+      1fr;
 
     grid-template-rows:
-      350px
-      240px
-      240px;
+      340px
+      220px
+      230px;
   }
 
-  .gallery-large {
-    grid-column: 1 / 3;
+
+  .featured-large {
+    grid-column:
+      1 / 3;
+
     grid-row: 1;
   }
 
-  .gallery-small {
+
+  .featured-small {
     grid-row: 2;
   }
 
-  .gallery-wide {
-    grid-column: 1;
+
+  .featured-wide {
+    grid-column:
+      1 / 3;
+
     grid-row: 3;
   }
 
-  .gallery-message {
-    grid-column: 2;
-    grid-row: 3;
+
+  /* COLLECTION */
+
+  .gallery-collection-header {
+    margin-top: 55px;
+  }
+
+
+  .gallery-masonry {
+    column-count: 3;
+
+    column-gap: 10px;
+  }
+
+
+  .masonry-item {
+    margin-bottom: 10px;
+  }
+
+
+  .masonry-hover {
+    opacity: 1;
+  }
+
+
+  .lightbox-navigation {
+    width: 43px;
+    height: 43px;
+  }
+
+
+  .lightbox-previous {
+    left: 10px;
+  }
+
+
+  .lightbox-next {
+    right: 10px;
   }
 
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
   .gallery-container {
-    width: min(100% - 30px, 1240px);
+    width:
+      min(
+        100% - 28px,
+        1240px
+      );
   }
+
+
+  /* HEADER */
 
   .gallery-header {
-    margin-bottom: 35px;
+    margin-bottom: 34px;
   }
 
+
   .gallery-heading h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
 
     letter-spacing: -2px;
   }
 
+
   .gallery-heading p {
-    font-size: 13px;
+    font-size: 12.5px;
+
+    line-height: 1.7;
   }
 
-  .gallery-grid {
-    display: grid;
 
-    grid-template-columns: 1fr;
+  /* =======================================================
+     FEATURED
+  ======================================================= */
+
+  .featured-gallery {
+    grid-template-columns:
+      1fr;
 
     grid-template-rows: none;
 
-    gap: 12px;
+    gap: 10px;
   }
 
-  .gallery-item,
-  .gallery-large,
-  .gallery-small,
-  .gallery-wide {
+
+  .featured-item,
+  .featured-large,
+  .featured-small,
+  .featured-wide {
     grid-column: auto;
     grid-row: auto;
 
-    height: 280px;
+    width: 100%;
   }
 
-  .gallery-large {
-    height: 360px;
+
+  .featured-large {
+    height: 380px;
   }
 
-  .gallery-message {
-    grid-column: auto;
-    grid-row: auto;
 
-    min-height: 210px;
+  .featured-small {
+    height: 245px;
   }
 
-  .gallery-content {
-    left: 18px;
-    right: 18px;
+
+  .featured-wide {
+    height: 210px;
+  }
+
+
+  .featured-content {
+    left: 17px;
+    right: 17px;
+    bottom: 16px;
+  }
+
+
+  .featured-content h3 {
+    font-size: 15px;
+  }
+
+
+  .featured-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  /* =======================================================
+     COLLECTION
+  ======================================================= */
+
+  .gallery-collection-header {
+    margin:
+      45px
+      0
+      24px;
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 11px;
+  }
+
+
+  .gallery-collection-header h3 {
+    font-size: 22px;
+  }
+
+
+  .gallery-collection-header p {
+    font-size: 11px;
+  }
+
+
+  /* =======================================================
+     MASONRY
+  ======================================================= */
+
+  .gallery-masonry {
+    column-count: 2;
+
+    column-gap: 8px;
+  }
+
+
+  .masonry-item {
+    margin-bottom: 8px;
+  }
+
+
+  .masonry-image {
+    border-radius: 10px;
+  }
+
+
+  .masonry-hover {
+    padding: 6px;
+  }
+
+
+  .masonry-view {
+    width: 28px;
+    height: 28px;
+  }
+
+
+  .masonry-view svg {
+    width: 14px;
+    height: 14px;
+  }
+
+
+  /* =======================================================
+     LIGHTBOX
+  ======================================================= */
+
+  .gallery-lightbox {
+    padding:
+      65px
+      12px
+      80px;
+  }
+
+
+  .lightbox-content {
+    width: 100%;
+
+    height: 75vh;
+  }
+
+
+  .lightbox-close {
+    top: 13px;
+    right: 13px;
+
+    width: 39px;
+    height: 39px;
+  }
+
+
+  .lightbox-navigation {
+    top: auto;
     bottom: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    transform: none;
   }
 
-  .gallery-content h3 {
-    font-size: 16px;
+
+  .lightbox-previous {
+    left: 20px;
+  }
+
+
+  .lightbox-next {
+    right: 20px;
   }
 
 }
 
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 
   .gallery-heading h2 {
-    font-size: 2.25rem;
+    font-size: 2.1rem;
   }
 
-  .gallery-large {
-    height: 320px;
+
+  .featured-large {
+    height: 330px;
   }
 
-  .gallery-item {
-    height: 240px;
+
+  .featured-small {
+    height: 215px;
+  }
+
+
+  .featured-wide {
+    height: 185px;
+  }
+
+
+  .gallery-masonry {
+    column-gap: 7px;
+  }
+
+
+  .masonry-item {
+    margin-bottom: 7px;
   }
 
 }
