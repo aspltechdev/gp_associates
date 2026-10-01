@@ -1,0 +1,619 @@
+.founder {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(53, 186, 184, 0.08),
+      transparent 25%
+    ),
+    #ffffff;
+}
+
+.founder-container {
+  width: min(100% - 40px, 1240px);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.founder-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #2f8a4a;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  margin-bottom: 55px;
+}
+
+.founder-label span {
+  width: 30px;
+  height: 2px;
+
+  background: #f2c928;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.founder-layout {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.founder-visual {
+  position: relative;
+
+  padding-bottom: 30px;
+}
+
+.founder-image-frame {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  aspect-ratio: 0.82;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #edf8f0;
+
+  box-shadow:
+    0 30px 70px rgba(18, 52, 38, 0.13);
+}
+
+.founder-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  transition: transform 0.7s ease;
+}
+
+.founder-image-frame:hover img {
+  transform: scale(1.025);
+}
+
+.founder-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(18, 52, 38, 0.55),
+      transparent 35%
+    );
+}
+
+
+/* =========================================
+   PHOTO TAG
+========================================= */
+
+.founder-photo-tag {
+  position: absolute;
+
+  left: 22px;
+  bottom: 22px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 12px 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 12px 30px rgba(18, 52, 38, 0.13);
+
+  color: #2f8a4a;
+}
+
+.founder-photo-tag svg {
+  color: #d3aa00;
+}
+
+.founder-photo-tag div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.founder-photo-tag strong {
+  color: #123426;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+}
+
+.founder-photo-tag span {
+  color: #708178;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   DECORATION
+========================================= */
+
+.founder-decoration {
+  position: absolute;
+
+  right: 15px;
+  bottom: 0;
+
+  width: 130px;
+  height: 130px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #f8df68 0 5px,
+      transparent 6px
+    );
+
+  background-size: 25px 25px;
+
+  opacity: 0.6;
+
+  z-index: -1;
+}
+
+.founder-experience {
+  position: absolute;
+
+  right: -30px;
+  top: 65px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 115px;
+  height: 115px;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2f8a4a;
+
+  color: #fff;
+
+  box-shadow: 0 15px 35px rgba(47, 138, 74, 0.2);
+
+  transform: rotate(6deg);
+}
+
+.founder-experience span {
+  color: #f8df68;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.founder-experience strong {
+  margin-top: 2px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+}
+
+.founder-experience small {
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 7px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.founder-eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #35bab8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.founder-eyebrow svg {
+  color: #2f8a4a;
+}
+
+.founder-content h2 {
+  margin-top: 18px;
+
+  color: #123426;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(2.7rem, 5vw, 4.7rem);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+.founder-content h2 em {
+  display: block;
+
+  color: #2f8a4a;
+
+  font-style: normal;
+}
+
+.founder-content h3 {
+  margin-top: 18px;
+
+  color: #718278;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+.founder-lead {
+  max-width: 620px;
+
+  margin-top: 30px;
+
+  color: #294d3c;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  line-height: 1.65;
+}
+
+.founder-description {
+  max-width: 600px;
+
+  margin-top: 18px;
+
+  color: #667a70;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.founder-quote {
+  max-width: 600px;
+
+  margin-top: 30px;
+
+  padding: 22px 25px;
+
+  display: flex;
+
+  gap: 15px;
+
+  border-left: 3px solid #f2c928;
+
+  background: #f5faf7;
+}
+
+.founder-quote svg {
+  flex-shrink: 0;
+
+  color: #2f8a4a;
+}
+
+.founder-quote p {
+  color: #385548;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.founder-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 30px;
+
+  padding: 14px 21px;
+
+  border-radius: 50px;
+
+  background: #2f8a4a;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  box-shadow: 0 10px 25px rgba(47, 138, 74, 0.18);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.founder-button:hover {
+  background: #126b3a;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CREDENTIALS
+========================================= */
+
+.founder-credentials {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 80px;
+
+  border-top: 1px solid rgba(47, 138, 74, 0.12);
+
+  border-bottom: 1px solid rgba(47, 138, 74, 0.12);
+}
+
+.founder-credentials > div {
+  position: relative;
+
+  padding: 25px 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  border-right: 1px solid rgba(47, 138, 74, 0.12);
+}
+
+.founder-credentials > div:last-child {
+  border-right: none;
+}
+
+.founder-credentials span {
+  color: #a0b0a7;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.founder-credentials strong {
+  color: #123426;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 17px;
+}
+
+.founder-credentials small {
+  color: #718278;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .founder-layout {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .founder-image-frame {
+    max-width: 600px;
+
+    margin: 0 auto;
+  }
+
+  .founder-experience {
+    right: 5%;
+  }
+
+  .founder-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .founder-container {
+    width: min(100% - 30px, 1240px);
+  }
+
+  .founder-label {
+    margin-bottom: 35px;
+
+    font-size: 9px;
+  }
+
+  .founder-image-frame {
+    border-radius: 22px;
+  }
+
+  .founder-experience {
+    right: -5px;
+
+    top: 30px;
+
+    width: 90px;
+    height: 90px;
+  }
+
+  .founder-experience strong {
+    font-size: 11px;
+  }
+
+  .founder-experience small {
+    font-size: 6px;
+  }
+
+  .founder-photo-tag {
+    left: 15px;
+    bottom: 15px;
+
+    padding: 10px 13px;
+  }
+
+  .founder-content h2 {
+    font-size: 2.7rem;
+
+    letter-spacing: -2px;
+  }
+
+  .founder-content h3 {
+    font-size: 10px;
+
+    line-height: 1.5;
+  }
+
+  .founder-lead {
+    font-size: 15px;
+
+    margin-top: 22px;
+  }
+
+  .founder-description {
+    font-size: 12px;
+  }
+
+  .founder-quote {
+    padding: 18px;
+
+    margin-top: 22px;
+  }
+
+  .founder-quote p {
+    font-size: 12px;
+  }
+
+  .founder-credentials {
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 50px;
+  }
+
+  .founder-credentials > div {
+    padding: 20px 15px;
+
+    border-bottom: 1px solid rgba(47, 138, 74, 0.12);
+  }
+
+  .founder-credentials > div:nth-child(2) {
+    border-right: none;
+  }
+
+  .founder-credentials > div:nth-child(3),
+  .founder-credentials > div:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .founder-credentials strong {
+    font-size: 14px;
+  }
+
+}

@@ -1,0 +1,585 @@
+/* =========================================
+   GP ASSOCIATES NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(47, 138, 74, 0.1);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   NAVBAR CONTAINER
+========================================= */
+
+.navbar-container {
+  width: min(100% - 40px, 1240px);
+
+  height: 82px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* Logo Circle */
+
+.logo-mark {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #2f8a4a;
+
+  border-radius: 50%;
+
+  color: #2f8a4a;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  background: rgba(47, 138, 74, 0.04);
+
+  overflow: hidden;
+}
+
+
+/* Inner Circle */
+
+.logo-mark::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 4px;
+
+  border: 1px solid rgba(47, 138, 74, 0.25);
+
+  border-radius: 50%;
+}
+
+
+/* Yellow Growth Dot */
+
+.logo-mark::after {
+  content: "";
+
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  right: 4px;
+  top: 5px;
+
+  background: #f2c928;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 12px rgba(242, 201, 40, 0.6);
+}
+
+
+/* Logo Text */
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.logo-name {
+  color: #126b3a;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+  line-height: 1;
+}
+
+.logo-tagline {
+  color: #718278;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+
+  margin-left: auto;
+  margin-right: 35px;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  color: #385548;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  color: #2f8a4a;
+
+  transform: translateY(-1px);
+}
+
+
+/* Nav Underline */
+
+.desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: #f2c928;
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 18px;
+}
+
+
+/* =========================================
+   NAVBAR ACTIONS
+========================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* Call Button */
+
+.navbar-phone {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 13px;
+
+  color: #385548;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.navbar-phone svg {
+  color: #2f8a4a;
+}
+
+.navbar-phone:hover {
+  color: #126b3a;
+
+  background: #edf8f0;
+}
+
+
+/* Main CTA */
+
+.navbar-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 44px;
+
+  padding: 0 18px;
+
+  border-radius: 100px;
+
+  background: #2f8a4a;
+
+  border: 1px solid #2f8a4a;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 22px rgba(47, 138, 74, 0.18);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.navbar-cta:hover {
+  background: #126b3a;
+
+  border-color: #126b3a;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(47, 138, 74, 0.25);
+}
+
+.navbar-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(47, 138, 74, 0.18);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #126b3a;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: #edf8f0;
+
+  border-color: rgba(47, 138, 74, 0.35);
+
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .desktop-nav,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-top: 1px solid transparent;
+
+    transition:
+      max-height 0.45s ease,
+      border-color 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 520px;
+
+    border-color: rgba(47, 138, 74, 0.1);
+  }
+
+
+  /* Mobile Links */
+
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px 20px 8px;
+  }
+
+  .mobile-menu nav a {
+    display: flex;
+    align-items: center;
+
+    min-height: 52px;
+
+    color: #385548;
+
+    border-bottom: 1px solid rgba(47, 138, 74, 0.08);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition:
+      color 0.3s ease,
+      padding-left 0.3s ease;
+  }
+
+  .mobile-menu nav a:hover {
+    color: #2f8a4a;
+
+    padding-left: 5px;
+  }
+
+
+  /* Mobile CTA */
+
+  .mobile-cta {
+    margin: 14px 20px 22px;
+
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 100px;
+
+    background: #2f8a4a;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+      0 10px 25px rgba(47, 138, 74, 0.18);
+
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .mobile-cta:hover {
+    background: #126b3a;
+
+    transform: translateY(-2px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .navbar-container {
+    width: min(100% - 30px, 1240px);
+
+    height: 72px;
+  }
+
+  .logo-mark {
+    width: 38px;
+    height: 38px;
+
+    font-size: 12px;
+  }
+
+  .logo-name {
+    font-size: 14px;
+
+    letter-spacing: 1px;
+  }
+
+  .logo-tagline {
+    font-size: 6.5px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .mobile-menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .navbar-container {
+    width: calc(100% - 24px);
+  }
+
+  .logo-tagline {
+    display: none;
+  }
+
+  .logo-name {
+    font-size: 13px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ================================
+   NAVBAR LOGO
+================================ */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navbar-logo-image {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Logo text */
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.logo-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--primary-dark);
+}
+
+.logo-tagline {
+  font-size: 8.5px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  white-space: nowrap;
+}

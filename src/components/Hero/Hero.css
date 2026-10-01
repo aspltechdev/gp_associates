@@ -1,0 +1,1117 @@
+/* =========================================
+   GP ASSOCIATES — HERO
+   Brand: Green + Teal + Growth Yellow
+========================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding-top: 82px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(53, 186, 184, 0.13),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 5% 85%,
+      rgba(101, 185, 87, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8fcf9 55%,
+      #eef9f3 100%
+    );
+
+  color: #123426;
+}
+
+
+/* =========================================
+   BACKGROUND GRID
+========================================= */
+
+.hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.45;
+
+  background-image:
+    linear-gradient(
+      rgba(47, 138, 74, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(47, 138, 74, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 55%,
+    transparent 100%
+  );
+}
+
+
+/* =========================================
+   BACKGROUND GLOWS
+========================================= */
+
+.hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(80px);
+}
+
+.hero-glow-one {
+  width: 420px;
+  height: 420px;
+
+  right: -130px;
+  top: 5%;
+
+  background: rgba(53, 186, 184, 0.10);
+}
+
+.hero-glow-two {
+  width: 360px;
+  height: 360px;
+
+  left: -180px;
+  bottom: -160px;
+
+  background: rgba(101, 185, 87, 0.10);
+}
+
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100% - 40px, 1240px);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 90px 0;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  max-width: 680px;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.hero-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 27px;
+
+  color: #2f8a4a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.eyebrow-line {
+  width: 34px;
+  height: 2px;
+
+  flex-shrink: 0;
+
+  border-radius: 20px;
+
+  background: #f2c928;
+}
+
+.hero-eyebrow svg {
+  color: #f2c928;
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero h1 {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #123426;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(
+    3.4rem,
+    6vw,
+    6.4rem
+  );
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: #2f8a4a;
+
+  position: relative;
+
+  width: fit-content;
+}
+
+
+/* Small yellow growth accent */
+
+.hero h1 span::after {
+  content: "";
+
+  position: absolute;
+
+  width: 48px;
+  height: 5px;
+
+  left: 4px;
+  bottom: -12px;
+
+  border-radius: 20px;
+
+  background: #f2c928;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 610px;
+
+  margin-top: 34px;
+
+  color: #61756b;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 38px;
+}
+
+
+/* Primary */
+
+.hero-primary-btn {
+  min-height: 54px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 0 23px;
+
+  border: 1px solid #2f8a4a;
+
+  border-radius: 100px;
+
+  background: #2f8a4a;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 28px rgba(47, 138, 74, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-primary-btn:hover {
+  background: #126b3a;
+
+  border-color: #126b3a;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 34px rgba(47, 138, 74, 0.25);
+}
+
+.hero-primary-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-primary-btn:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* Secondary */
+
+.hero-secondary-btn {
+  min-height: 54px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 21px;
+
+  border: 1px solid rgba(47, 138, 74, 0.2);
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #126b3a;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-secondary-btn svg {
+  color: #35bab8;
+}
+
+.hero-secondary-btn:hover {
+  transform: translateY(-3px);
+
+  background: #edf8f0;
+
+  border-color: rgba(47, 138, 74, 0.35);
+}
+
+
+/* =========================================
+   TRUST MESSAGE
+========================================= */
+
+.hero-trust {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 45px;
+}
+
+.hero-trust-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(47, 138, 74, 0.18);
+
+  border-radius: 50%;
+
+  background: #edf8f0;
+
+  color: #2f8a4a;
+}
+
+.hero-trust div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.hero-trust strong {
+  color: #234d39;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.hero-trust span {
+  color: #82928a;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 610px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.hero-image-wrapper {
+  position: relative;
+
+  width: min(100%, 510px);
+
+  aspect-ratio: 0.82;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   DECORATIVE RING
+========================================= */
+
+.hero-image-ring {
+  position: absolute;
+
+  width: 95%;
+  height: 95%;
+
+  border: 1px solid rgba(47, 138, 74, 0.18);
+
+  border-radius: 50%;
+
+  transform: rotate(-18deg);
+}
+
+.hero-image-ring::before {
+  content: "";
+
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  top: 11%;
+  right: 9%;
+
+  border-radius: 50%;
+
+  background: #f2c928;
+
+  box-shadow:
+    0 0 0 7px rgba(242, 201, 40, 0.08),
+    0 0 25px rgba(242, 201, 40, 0.35);
+}
+
+
+/* =========================================
+   IMAGE PLACEHOLDER
+========================================= */
+
+.hero-image-placeholder {
+  position: relative;
+
+  z-index: 2;
+
+  width: 80%;
+  height: 87%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eaf7ef 0%,
+      #f8fcf9 50%,
+      #e3f4ed 100%
+    );
+
+  border: 1px solid rgba(47, 138, 74, 0.12);
+
+  border-radius:
+    260px
+    260px
+    30px
+    30px;
+
+  box-shadow:
+    0 35px 80px rgba(18, 107, 58, 0.13);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.hero-image-placeholder:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 45px 100px rgba(18, 107, 58, 0.18);
+}
+
+
+/* =========================================
+   PLACEHOLDER CONTENT
+========================================= */
+
+.placeholder-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  opacity: 0.65;
+}
+
+.placeholder-initials {
+  color: #2f8a4a;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 90px;
+
+  font-weight: 800;
+
+  letter-spacing: -6px;
+}
+
+.placeholder-text {
+  color: #7b8f84;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.hero-floating-card {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 16px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(47, 138, 74, 0.1);
+
+  border-radius: 15px;
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 50px rgba(18, 107, 58, 0.12);
+}
+
+
+/* Top card */
+
+.hero-card-top {
+  top: 15%;
+
+  right: -2%;
+}
+
+
+/* Bottom card */
+
+.hero-card-bottom {
+  bottom: 14%;
+
+  left: -3%;
+}
+
+
+/* Icon */
+
+.floating-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #edf8f0;
+
+  color: #2f8a4a;
+}
+
+
+/* Card text */
+
+.hero-floating-card div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.hero-floating-card span {
+  color: #819087;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+.hero-floating-card strong {
+  color: #17372a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* MDRT */
+
+.mdrt-number {
+  color: #2f8a4a;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   GROWTH DECORATION
+========================================= */
+
+.hero-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  width: 140px;
+  height: 140px;
+
+  right: -30px;
+  bottom: 35px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(53, 186, 184, 0.12),
+      rgba(101, 185, 87, 0.08)
+    );
+
+  filter: blur(1px);
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #91a099;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 45px;
+  height: 1px;
+
+  background: #a9bbb2;
+}
+
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding-top: 75px;
+
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 750px;
+
+    margin: auto;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 560px;
+  }
+
+  .hero-image-wrapper {
+    width: min(90%, 480px);
+  }
+
+  .hero-card-top {
+    right: 5%;
+  }
+
+  .hero-card-bottom {
+    left: 5%;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero-container {
+    width: min(100% - 30px, 1240px);
+
+    padding: 65px 0 90px;
+
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      3rem,
+      10vw,
+      4.8rem
+    );
+
+    letter-spacing: -2.5px;
+  }
+
+  .hero-description {
+    max-width: 580px;
+
+    font-size: 15px;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+
+  .hero-image-wrapper {
+    width: min(92%, 430px);
+  }
+
+  .hero-floating-card {
+    padding: 11px 13px;
+  }
+
+  .hero-card-top {
+    right: 0;
+  }
+
+  .hero-card-bottom {
+    left: 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: auto;
+
+    padding-top: 72px;
+  }
+
+  .hero-grid {
+    background-size: 50px 50px;
+
+    opacity: 0.25;
+  }
+
+  .hero-container {
+    width: calc(100% - 30px);
+
+    padding: 60px 0 75px;
+
+    gap: 5px;
+  }
+
+  .hero-eyebrow {
+    gap: 7px;
+
+    margin-bottom: 22px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .eyebrow-line {
+    width: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      2.8rem,
+      14vw,
+      4.2rem
+    );
+
+    letter-spacing: -2px;
+
+    line-height: 1;
+  }
+
+  .hero h1 span::after {
+    width: 34px;
+
+    height: 4px;
+
+    bottom: -8px;
+  }
+
+  .hero-description {
+    margin-top: 27px;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 10px;
+
+    margin-top: 30px;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    width: 100%;
+
+    min-height: 52px;
+  }
+
+  .hero-trust {
+    justify-content: flex-start;
+
+    text-align: left;
+
+    margin-top: 30px;
+  }
+
+  .hero-trust-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+
+    margin-top: 5px;
+  }
+
+  .hero-image-wrapper {
+    width: 92%;
+  }
+
+  .hero-image-placeholder {
+    width: 78%;
+    height: 84%;
+
+    border-radius:
+      200px
+      200px
+      24px
+      24px;
+  }
+
+  .placeholder-initials {
+    font-size: 65px;
+  }
+
+  .placeholder-text {
+    font-size: 8px;
+  }
+
+  .hero-floating-card {
+    gap: 8px;
+
+    padding: 9px 11px;
+
+    border-radius: 12px;
+  }
+
+  .hero-card-top {
+    top: 12%;
+
+    right: -2%;
+  }
+
+  .hero-card-bottom {
+    bottom: 9%;
+
+    left: -2%;
+  }
+
+  .floating-icon {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+  }
+
+  .hero-floating-card span {
+    font-size: 8px;
+  }
+
+  .hero-floating-card strong {
+    font-size: 10px;
+  }
+
+  .mdrt-number {
+    font-size: 12px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+  }
+
+  .hero-floating-card {
+    transform: scale(0.9);
+  }
+}
+
+/* =========================================
+   HERO FOUNDER IMAGE
+========================================= */
+
+.hero-image-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  background: var(--background-green);
+
+  border: 1px solid
+    rgba(47, 138, 74, 0.14);
+
+  box-shadow:
+    0 30px 80px rgba(18, 107, 58, 0.14);
+}
+
+.hero-founder-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  position: relative;
+  z-index: 2;
+}

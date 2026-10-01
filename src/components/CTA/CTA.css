@@ -1,0 +1,608 @@
+.cta-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 120px 0;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(53, 186, 184, 0.28),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #126b3a 0%,
+      #2f8a4a 55%,
+      #65b957 100%
+    );
+
+  color: #fff;
+}
+
+.cta-container {
+  position: relative;
+
+  width: min(100% - 40px, 1240px);
+
+  min-height: 530px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.cta-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+.cta-glow-one {
+  width: 350px;
+  height: 350px;
+
+  top: -200px;
+  left: -150px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cta-glow-two {
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  bottom: -180px;
+
+  background: rgba(248, 223, 104, 0.1);
+}
+
+.cta-grid-pattern {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.08;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.5) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.5) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.cta-content {
+  position: relative;
+
+  z-index: 3;
+}
+
+.cta-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #f8df68;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.cta-label span {
+  width: 30px;
+  height: 2px;
+
+  background: #f8df68;
+
+  border-radius: 10px;
+}
+
+.cta-content h2 {
+  margin-top: 22px;
+
+  color: #fff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(3rem, 5.5vw, 5.4rem);
+
+  font-weight: 700;
+
+  line-height: 0.98;
+
+  letter-spacing: -4px;
+}
+
+.cta-content h2 em {
+  color: #f8df68;
+
+  font-style: normal;
+}
+
+.cta-content p {
+  max-width: 610px;
+
+  margin-top: 28px;
+
+  color: rgba(255, 255, 255, 0.74);
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.cta-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.cta-primary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-height: 50px;
+
+  padding: 0 21px;
+
+  border-radius: 50px;
+
+  background: #f8df68;
+
+  color: #123426;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.cta-primary:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.cta-secondary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 50px;
+
+  padding: 0 18px;
+
+  border-radius: 50px;
+
+  color: #fff;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   VISUAL
+========================================= */
+
+.cta-visual {
+  position: relative;
+
+  min-height: 450px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.cta-orbit {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.orbit-large {
+  width: 390px;
+  height: 390px;
+}
+
+.orbit-medium {
+  width: 275px;
+  height: 275px;
+
+  border-color: rgba(248, 223, 104, 0.35);
+}
+
+.orbit-small {
+  width: 180px;
+  height: 180px;
+
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cta-center {
+  position: relative;
+
+  z-index: 4;
+
+  width: 150px;
+  height: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+}
+
+.cta-center svg {
+  color: #f8df68;
+
+  margin-bottom: 7px;
+}
+
+.cta-center span {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.cta-center strong {
+  margin-top: 4px;
+
+  color: #fff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   FLOATING LABELS
+========================================= */
+
+.cta-floating {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 14px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cta-floating span {
+  color: #f8df68;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+.cta-floating strong {
+  color: #fff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 11px;
+}
+
+.cta-floating-one {
+  top: 65px;
+  left: 5%;
+}
+
+.cta-floating-two {
+  right: 0;
+  top: 190px;
+}
+
+.cta-floating-three {
+  bottom: 65px;
+  left: 10%;
+}
+
+
+/* =========================================
+   TRUST
+========================================= */
+
+.cta-trust {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.cta-trust span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.cta-trust i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #f8df68;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .cta-container {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .cta-content {
+    max-width: 700px;
+  }
+
+  .cta-visual {
+    min-height: 350px;
+  }
+
+  .cta-trust {
+    position: static;
+
+    margin-top: 20px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .cta-section {
+    padding: 80px 0;
+  }
+
+  .cta-container {
+    width: min(100% - 30px, 1240px);
+
+    min-height: auto;
+  }
+
+  .cta-content h2 {
+    font-size: 2.9rem;
+
+    letter-spacing: -2.5px;
+  }
+
+  .cta-content p {
+    font-size: 13px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    justify-content: center;
+  }
+
+  .cta-visual {
+    min-height: 320px;
+
+    margin-top: 20px;
+  }
+
+  .orbit-large {
+    width: 290px;
+    height: 290px;
+  }
+
+  .orbit-medium {
+    width: 210px;
+    height: 210px;
+  }
+
+  .orbit-small {
+    width: 140px;
+    height: 140px;
+  }
+
+  .cta-center {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cta-floating-one {
+    left: 0;
+    top: 30px;
+  }
+
+  .cta-floating-two {
+    right: 0;
+    top: 145px;
+  }
+
+  .cta-floating-three {
+    left: 3%;
+    bottom: 30px;
+  }
+
+  .cta-trust {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .cta-floating {
+    padding: 8px 11px;
+  }
+
+  .cta-floating strong {
+    font-size: 9px;
+  }
+}

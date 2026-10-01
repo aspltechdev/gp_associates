@@ -1,0 +1,463 @@
+.gallery {
+  position: relative;
+  overflow: hidden;
+
+  background: #f5faf7;
+}
+
+.gallery-container {
+  width: min(100% - 40px, 1240px);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.gallery-header {
+  margin-bottom: 55px;
+}
+
+.gallery-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #2f8a4a;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.gallery-label span {
+  width: 30px;
+  height: 2px;
+
+  background: #f2c928;
+
+  border-radius: 10px;
+}
+
+.gallery-heading {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-top: 20px;
+}
+
+.gallery-heading h2 {
+  color: #123426;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(2.7rem, 5vw, 4.7rem);
+
+  font-weight: 700;
+
+  line-height: 1.03;
+
+  letter-spacing: -3px;
+}
+
+.gallery-heading h2 em {
+  display: block;
+
+  color: #2f8a4a;
+
+  font-style: normal;
+}
+
+.gallery-heading p {
+  max-width: 460px;
+
+  color: #667a70;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    0.8fr
+    0.8fr;
+
+  grid-template-rows:
+    300px
+    230px;
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   ITEMS
+========================================= */
+
+.gallery-item {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #dceee2;
+
+  cursor: pointer;
+}
+
+.gallery-large {
+  grid-row: 1 / 3;
+}
+
+.gallery-small {
+  grid-row: 1;
+}
+
+.gallery-wide {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.gallery-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(18, 52, 38, 0.75),
+      rgba(18, 52, 38, 0.05) 65%
+    );
+
+  transition: background 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(18, 52, 38, 0.85),
+      rgba(18, 52, 38, 0.12) 70%
+    );
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.gallery-content {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 22px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  z-index: 2;
+}
+
+.gallery-content span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #f8df68;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.gallery-content h3 {
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.gallery-arrow {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-arrow {
+  background: #f8df68;
+
+  color: #123426;
+
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================
+   MESSAGE TILE
+========================================= */
+
+.gallery-message {
+  grid-column: 3;
+
+  grid-row: 2;
+
+  padding: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background: #126b3a;
+
+  color: #ffffff;
+}
+
+.gallery-message-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 13px;
+
+  color: #f8df68;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.gallery-message > span {
+  color: #65b957;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.gallery-message strong {
+  max-width: 200px;
+
+  margin-top: 7px;
+
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .gallery-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+      350px
+      240px
+      240px;
+  }
+
+  .gallery-large {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .gallery-small {
+    grid-row: 2;
+  }
+
+  .gallery-wide {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .gallery-message {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .gallery-container {
+    width: min(100% - 30px, 1240px);
+  }
+
+  .gallery-header {
+    margin-bottom: 35px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 2.6rem;
+
+    letter-spacing: -2px;
+  }
+
+  .gallery-heading p {
+    font-size: 13px;
+  }
+
+  .gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: none;
+
+    gap: 12px;
+  }
+
+  .gallery-item,
+  .gallery-large,
+  .gallery-small,
+  .gallery-wide {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: 280px;
+  }
+
+  .gallery-large {
+    height: 360px;
+  }
+
+  .gallery-message {
+    grid-column: auto;
+    grid-row: auto;
+
+    min-height: 210px;
+  }
+
+  .gallery-content {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .gallery-content h3 {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .gallery-heading h2 {
+    font-size: 2.25rem;
+  }
+
+  .gallery-large {
+    height: 320px;
+  }
+
+  .gallery-item {
+    height: 240px;
+  }
+
+}
