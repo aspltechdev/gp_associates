@@ -4,9 +4,7 @@
 
 .about {
   position: relative;
-
   overflow: hidden;
-
   background: #ffffff;
 }
 
@@ -17,13 +15,10 @@
 
 .about-container {
   width: min(100% - 40px, 1240px);
-
   margin: auto;
 
   display: grid;
-
   grid-template-columns: 0.9fr 1.1fr;
-
   align-items: center;
 
   gap: 100px;
@@ -31,7 +26,7 @@
 
 
 /* =========================================
-   VISUAL
+   LEFT VISUAL
 ========================================= */
 
 .about-visual {
@@ -40,291 +35,301 @@
   min-height: 560px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
 
 
 /* =========================================
-   MAIN CARD
+   IMAGE CARD
 ========================================= */
 
-.about-card {
+.about-image-card {
   position: relative;
 
   width: min(100%, 430px);
-
   height: 500px;
 
   overflow: hidden;
 
-  padding: 35px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  background:
-    linear-gradient(
-      145deg,
-      #126b3a 0%,
-      #2f8a4a 55%,
-      #35a58d 100%
-    );
-
   border-radius: 30px;
+
+  background: #126b3a;
 
   box-shadow:
     0 35px 80px rgba(18, 107, 58, 0.18);
-}
 
-
-/* Decorative Glow */
-
-.about-card::before {
-  content: "";
-
-  position: absolute;
-
-  width: 280px;
-  height: 280px;
-
-  right: -100px;
-  top: -100px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(255, 255, 255, 0.08);
-
-  filter: blur(3px);
-}
-
-.about-card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 220px;
-  height: 220px;
-
-  left: -100px;
-  bottom: -100px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(242, 201, 40, 0.09);
+  isolation: isolate;
 }
 
 
 /* =========================================
-   CARD TOP
+   IMAGE
 ========================================= */
 
-.about-card-top {
-  position: relative;
+.about-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.8s ease;
+}
+
+
+/* Image hover */
+
+.about-image-card:hover .about-image {
+  transform: scale(1.055);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.about-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 46, 25, 0.28) 0%,
+      rgba(5, 46, 25, 0.03) 35%,
+      rgba(5, 46, 25, 0.08) 55%,
+      rgba(5, 46, 25, 0.78) 100%
+    );
+}
+
+
+/* subtle green tint */
+
+.about-image-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
 
   z-index: 2;
 
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 107, 58, 0.12),
+      transparent 45%,
+      rgba(47, 138, 74, 0.08)
+    );
+}
+
+
+/* bottom glow */
+
+.about-image-card::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 2;
+
+  width: 250px;
+  height: 250px;
+
+  left: -80px;
+  bottom: -120px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: rgba(64, 167, 84, 0.24);
+
+  filter: blur(20px);
+}
+
+
+/* =========================================
+   IMAGE TOP
+========================================= */
+
+.about-image-top {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 35px;
+  left: 35px;
+  right: 35px;
+
   display: flex;
 
-  align-items: center;
-
+  align-items: flex-start;
   justify-content: space-between;
 }
 
-.about-card-top > span {
-  color: rgba(255, 255, 255, 0.95);
+
+/* =========================================
+   BRAND
+========================================= */
+
+.about-image-brand {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+.about-image-brand strong {
+  color: #ffffff;
 
   font-family: "Manrope", sans-serif;
 
-  font-size: 36px;
-
+  font-size: 37px;
   font-weight: 800;
 
+  line-height: 1;
+
   letter-spacing: -2px;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.about-growth-icon {
-  width: 44px;
-  height: 44px;
+.about-image-brand span {
+  margin-top: 6px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =========================================
+   TOP ARROW
+========================================= */
+
+.about-image-arrow {
+  width: 46px;
+  height: 46px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f8df68;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.24);
 
   border-radius: 50%;
 
-  color: #f8df68;
+  background:
+    rgba(255, 255, 255, 0.1);
 
-  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
-
-/* =========================================
-   GROWTH GRAPHIC
-========================================= */
-
-.about-growth {
-  position: relative;
-
-  z-index: 2;
-
-  height: 230px;
-
-  display: flex;
-
-  align-items: flex-end;
-
-  gap: 16px;
-
-  padding: 20px 10px;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-
-/* Bars */
-
-.growth-bars {
-  height: 100%;
-
-  flex: 1;
-
-  display: flex;
-
-  align-items: flex-end;
-
-  gap: 12px;
-}
-
-.growth-bars span {
-  width: 15%;
-
-  border-radius:
-    6px
-    6px
-    0
-    0;
+.about-image-arrow:hover {
+  transform: translate(3px, -3px);
 
   background:
     rgba(255, 255, 255, 0.18);
-}
 
-.growth-bars span:nth-child(1) {
-  height: 25%;
-}
-
-.growth-bars span:nth-child(2) {
-  height: 40%;
-}
-
-.growth-bars span:nth-child(3) {
-  height: 52%;
-}
-
-.growth-bars span:nth-child(4) {
-  height: 70%;
-}
-
-.growth-bars span:nth-child(5) {
-  height: 90%;
-
-  background: rgba(248, 223, 104, 0.65);
-}
-
-
-/* Growth Line */
-
-.growth-arrow {
-  position: absolute;
-
-  left: 20px;
-  bottom: 35px;
-
-  width: 75%;
-
-  height: 3px;
-
-  border-radius: 20px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #65b957,
-      #f8df68
-    );
-
-  transform:
-    rotate(-23deg);
-
-  transform-origin: left center;
-
-  box-shadow:
-    0 0 15px rgba(248, 223, 104, 0.25);
-}
-
-.growth-arrow::after {
-  content: "";
-
-  position: absolute;
-
-  right: -1px;
-  top: 50%;
-
-  width: 12px;
-  height: 12px;
-
-  border-top: 3px solid #f8df68;
-  border-right: 3px solid #f8df68;
-
-  transform:
-    translateY(-50%)
-    rotate(45deg);
+  border-color:
+    rgba(255, 255, 255, 0.4);
 }
 
 
 /* =========================================
-   CARD BOTTOM
+   BOTTOM TEXT
 ========================================= */
 
-.about-card-bottom {
-  position: relative;
+.about-image-bottom {
+  position: absolute;
 
-  z-index: 2;
+  z-index: 4;
+
+  left: 35px;
+  bottom: 35px;
 
   display: flex;
-
   flex-direction: column;
 
   gap: 6px;
 }
 
-.about-card-bottom span {
-  color: rgba(255, 255, 255, 0.55);
+.about-image-bottom span {
+  color: rgba(255, 255, 255, 0.68);
 
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 600;
 
   text-transform: uppercase;
 
   letter-spacing: 2px;
 }
 
-.about-card-bottom strong {
+.about-image-bottom strong {
   color: #ffffff;
 
   font-family: "Manrope", sans-serif;
 
-  font-size: 27px;
-
+  font-size: 28px;
   font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.8px;
+}
+
+
+/* =========================================
+   DECORATIVE IMAGE LINE
+========================================= */
+
+.about-image-line {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 35px;
+  right: 35px;
+  bottom: 105px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.05)
+    );
 }
 
 
@@ -335,7 +340,7 @@
 .about-floating-badge {
   position: absolute;
 
-  z-index: 5;
+  z-index: 10;
 
   right: -25px;
   bottom: 65px;
@@ -344,33 +349,46 @@
 
   align-items: center;
 
-  gap: 10px;
+  gap: 11px;
+
+  min-width: 150px;
 
   padding: 14px 17px;
 
-  background: #ffffff;
+  background:
+    rgba(255, 255, 255, 0.96);
 
-  border: 1px solid rgba(47, 138, 74, 0.1);
+  border:
+    1px solid
+    rgba(47, 138, 74, 0.1);
 
   border-radius: 14px;
 
   box-shadow:
-    0 20px 45px rgba(18, 107, 58, 0.12);
+    0 20px 45px rgba(18, 107, 58, 0.14);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
+
 
 .badge-dot {
   width: 10px;
   height: 10px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
   background: #f2c928;
 
   box-shadow:
-    0 0 0 5px rgba(242, 201, 40, 0.1);
+    0 0 0 5px
+    rgba(242, 201, 40, 0.12);
 }
 
-.about-floating-badge div:last-child {
+
+.badge-content {
   display: flex;
 
   flex-direction: column;
@@ -378,23 +396,28 @@
   gap: 3px;
 }
 
+
 .about-floating-badge strong {
   color: #17372a;
 
   font-size: 11px;
-
   font-weight: 800;
+
+  line-height: 1.2;
 }
+
 
 .about-floating-badge span {
   color: #87968f;
 
   font-size: 9px;
+
+  white-space: nowrap;
 }
 
 
 /* =========================================
-   DECORATION
+   BACKGROUND DECORATION
 ========================================= */
 
 .about-decoration {
@@ -408,10 +431,13 @@
   left: -70px;
   top: 30px;
 
-  border: 1px solid rgba(53, 186, 184, 0.18);
+  border:
+    1px solid
+    rgba(53, 186, 184, 0.18);
 
   border-radius: 50%;
 }
+
 
 .about-decoration::after {
   content: "";
@@ -420,14 +446,16 @@
 
   inset: 35px;
 
-  border: 1px dashed rgba(47, 138, 74, 0.13);
+  border:
+    1px dashed
+    rgba(47, 138, 74, 0.13);
 
   border-radius: 50%;
 }
 
 
 /* =========================================
-   CONTENT
+   RIGHT CONTENT
 ========================================= */
 
 .about-content {
@@ -435,7 +463,9 @@
 }
 
 
-/* Section Label */
+/* =========================================
+   SECTION LABEL
+========================================= */
 
 .section-label {
   display: flex;
@@ -449,15 +479,17 @@
   color: #2f8a4a;
 
   font-size: 10px;
-
   font-weight: 800;
 
   letter-spacing: 2px;
 }
 
+
 .section-label span {
   width: 30px;
   height: 2px;
+
+  flex-shrink: 0;
 
   border-radius: 20px;
 
@@ -465,7 +497,9 @@
 }
 
 
-/* Heading */
+/* =========================================
+   HEADING
+========================================= */
 
 .about-content h2 {
   margin: 0;
@@ -487,6 +521,7 @@
   letter-spacing: -2.5px;
 }
 
+
 .about-content h2 em {
   display: block;
 
@@ -496,7 +531,9 @@
 }
 
 
-/* Lead */
+/* =========================================
+   LEAD
+========================================= */
 
 .about-lead {
   max-width: 610px;
@@ -511,7 +548,9 @@
 }
 
 
-/* Description */
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .about-description {
   max-width: 610px;
@@ -541,6 +580,7 @@
   margin-top: 30px;
 }
 
+
 .about-point {
   display: flex;
 
@@ -551,9 +591,9 @@
   color: #486055;
 
   font-size: 12px;
-
   font-weight: 600;
 }
+
 
 .about-point svg {
   flex-shrink: 0;
@@ -578,9 +618,11 @@
   color: #126b3a;
 
   font-size: 13px;
-
   font-weight: 800;
+
+  text-decoration: none;
 }
+
 
 .about-link > span {
   width: 34px;
@@ -591,7 +633,9 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(47, 138, 74, 0.18);
+  border:
+    1px solid
+    rgba(47, 138, 74, 0.18);
 
   border-radius: 50%;
 
@@ -602,6 +646,7 @@
     background 0.3s ease;
 }
 
+
 .about-link:hover > span {
   transform: translate(3px, -3px);
 
@@ -610,26 +655,54 @@
 
 
 /* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .about-container {
+    gap: 60px;
+  }
+
+  .about-floating-badge {
+    right: -10px;
+  }
+}
+
+
+/* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 950px) {
 
   .about-container {
     grid-template-columns: 1fr;
 
-    gap: 65px;
+    gap: 60px;
   }
+
 
   .about-visual {
     min-height: 520px;
+
+    width: 100%;
   }
 
-  .about-card {
-    width: min(100%, 430px);
+
+  .about-image-card {
+    width: min(100%, 500px);
   }
+
+
+  .about-floating-badge {
+    right: calc(50% - 270px);
+  }
+
 
   .about-content {
+    width: min(100%, 700px);
+
     max-width: 700px;
 
     margin: auto;
@@ -637,9 +710,11 @@
     text-align: center;
   }
 
+
   .section-label {
     justify-content: center;
   }
+
 
   .about-lead,
   .about-description {
@@ -647,12 +722,9 @@
     margin-right: auto;
   }
 
+
   .about-points {
     text-align: left;
-  }
-
-  .about-link {
-    justify-content: center;
   }
 }
 
@@ -666,57 +738,87 @@
   .about-container {
     width: calc(100% - 30px);
 
-    gap: 50px;
+    gap: 45px;
   }
+
 
   .about-visual {
-    min-height: 430px;
+    min-height: auto;
+
+    padding-bottom: 30px;
   }
 
-  .about-card {
-    width: 88%;
-    height: 420px;
 
-    padding: 25px;
+  .about-image-card {
+    width: 100%;
+
+    height: 440px;
 
     border-radius: 25px;
   }
 
-  .about-card-top > span {
-    font-size: 28px;
+
+  .about-image {
+    object-position: center;
   }
 
-  .about-growth {
-    height: 180px;
 
-    gap: 8px;
+  .about-image-top {
+    top: 24px;
+    left: 24px;
+    right: 24px;
   }
 
-  .growth-bars {
-    gap: 7px;
+
+  .about-image-brand strong {
+    font-size: 30px;
   }
 
-  .about-card-bottom strong {
-    font-size: 23px;
+
+  .about-image-arrow {
+    width: 42px;
+    height: 42px;
   }
+
+
+  .about-image-bottom {
+    left: 24px;
+    bottom: 28px;
+  }
+
+
+  .about-image-bottom strong {
+    font-size: 24px;
+  }
+
+
+  .about-image-line {
+    left: 24px;
+    right: 24px;
+
+    bottom: 94px;
+  }
+
 
   .about-floating-badge {
-    right: -3px;
-    bottom: 35px;
+    right: 14px;
+    bottom: 0;
+
+    min-width: auto;
 
     padding: 11px 13px;
   }
 
-  .about-decoration {
-    width: 260px;
-    height: 260px;
 
-    left: -70px;
+  .about-decoration {
+    display: none;
   }
+
 
   .about-content {
     text-align: left;
   }
+
 
   .section-label {
     justify-content: flex-start;
@@ -724,11 +826,13 @@
     font-size: 8px;
   }
 
+
   .about-content h2 {
     font-size: 2.5rem;
 
     letter-spacing: -1.7px;
   }
+
 
   .about-lead {
     font-size: 15px;
@@ -736,15 +840,18 @@
     line-height: 1.7;
   }
 
+
   .about-description {
     font-size: 13px;
   }
+
 
   .about-points {
     grid-template-columns: 1fr;
 
     gap: 13px;
   }
+
 
   .about-link {
     justify-content: flex-start;
@@ -758,16 +865,37 @@
 
 @media (max-width: 380px) {
 
-  .about-card {
-    height: 390px;
+  .about-image-card {
+    height: 400px;
   }
+
+
+  .about-image-top {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+
+  .about-image-bottom {
+    left: 20px;
+  }
+
+
+  .about-image-line {
+    left: 20px;
+    right: 20px;
+  }
+
 
   .about-content h2 {
     font-size: 2.25rem;
   }
 
+
   .about-floating-badge {
     transform: scale(0.9);
+
     transform-origin: right bottom;
   }
 }

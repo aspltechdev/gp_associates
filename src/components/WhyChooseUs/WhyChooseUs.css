@@ -1,3 +1,7 @@
+/* =========================================================
+   WHY GP ASSOCIATES
+========================================================= */
+
 .why-section {
   position: relative;
   overflow: hidden;
@@ -9,156 +13,292 @@
   margin: 0 auto;
 }
 
-/* =========================================
+/* =========================================================
    HEADER
-========================================= */
+========================================================= */
 
 .why-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   gap: 50px;
-
-  margin-bottom: 55px;
+  margin-bottom: 52px;
 }
 
 .why-label {
   display: flex;
   align-items: center;
   gap: 10px;
-
   color: #2f8a4a;
-
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
 }
 
-.why-label span {
+.why-label > span {
   width: 30px;
   height: 2px;
-
-  border-radius: 10px;
-
+  flex-shrink: 0;
+  border-radius: 999px;
   background: #f2c928;
 }
 
-.why-header p {
+.why-header > p {
   max-width: 530px;
-
+  margin: 0;
   color: #667a70;
-
   font-size: 15px;
   line-height: 1.8;
 }
 
-
-/* =========================================
+/* =========================================================
    MAIN LAYOUT
-========================================= */
+========================================================= */
 
 .why-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-
-  gap: 80px;
-
+  grid-template-columns: minmax(390px, 470px) minmax(0, 1fr);
+  gap: 72px;
   align-items: stretch;
 }
 
-
-/* =========================================
-   FEATURE PANEL
-========================================= */
+/* =========================================================
+   FEATURE CARD
+========================================================= */
 
 .why-feature {
   position: relative;
-
-  min-height: 570px;
-
+  width: 100%;
+  height: 560px;
   overflow: hidden;
-
-  padding: 42px;
-
-  display: flex;
-  flex-direction: column;
-
   border-radius: 30px;
-
-  background:
-    radial-gradient(
-      circle at 80% 15%,
-      rgba(53, 186, 184, 0.28),
-      transparent 32%
-    ),
-    linear-gradient(
-      145deg,
-      #126b3a,
-      #2f8a4a 65%,
-      #65b957
-    );
-
-  box-shadow: 0 25px 65px rgba(18, 107, 58, 0.17);
+  background: #0b6638;
+  box-shadow: 0 28px 70px rgba(18, 107, 58, 0.18);
+  isolation: isolate;
 }
 
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.why-feature-image {
+  position: absolute;
+  z-index: -10;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* this is the main crop control */
+  object-position: 74% 58%;
+
+  /* family should look bigger like preview */
+  transform: scale(1.36);
+
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.why-feature:hover .why-feature-image {
+  transform: scale(1.4);
+}
+
+/* =========================================================
+   OVERLAYS
+========================================================= */
+
+/* main dark green top overlay */
+.why-overlay-top {
+  position: absolute;
+  z-index: -9;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 79, 42, 0.98) 0%,
+      rgba(6, 92, 47, 0.96) 16%,
+      rgba(9, 106, 53, 0.9) 30%,
+      rgba(12, 116, 58, 0.73) 42%,
+      rgba(13, 118, 59, 0.44) 54%,
+      rgba(13, 118, 59, 0.17) 64%,
+      rgba(13, 118, 59, 0.03) 73%,
+      rgba(13, 118, 59, 0) 78%
+    );
+}
+
+/* left side richness */
+.why-overlay-side {
+  position: absolute;
+  z-index: -8;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 54, 30, 0.34) 0%,
+      rgba(3, 54, 30, 0.2) 34%,
+      rgba(3, 54, 30, 0.08) 55%,
+      transparent 74%
+    );
+}
+
+/* warm sunlight visibility like the mockup */
+.why-overlay-warm {
+  position: absolute;
+  z-index: -7;
+  right: -30px;
+  bottom: 98px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 222, 120, 0.26) 0%,
+      rgba(255, 214, 110, 0.16) 28%,
+      rgba(255, 214, 110, 0.06) 55%,
+      rgba(255, 214, 110, 0) 72%
+    );
+  filter: blur(6px);
+}
+
+/* gentle bottom darkening but not too much */
+.why-overlay-bottom-fade {
+  position: absolute;
+  z-index: -6;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 170px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 28, 16, 0) 0%,
+      rgba(2, 28, 16, 0.16) 32%,
+      rgba(2, 28, 16, 0.48) 66%,
+      rgba(2, 28, 16, 0.7) 100%
+    );
+}
+
+.why-orb {
+  position: absolute;
+  z-index: -5;
+  width: 220px;
+  height: 220px;
+  top: -142px;
+  right: -72px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(106, 200, 112, 0.1);
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
 .why-feature-top {
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  left: 31px;
+  right: 31px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.why-feature-top > span {
-  color: rgba(255, 255, 255, 0.62);
-
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.why-feature-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
 }
 
-.why-feature-arrow {
-  width: 42px;
-  height: 42px;
+.feature-label-line {
+  display: block;
+  width: 21px;
+  height: 1px;
+  flex-shrink: 0;
+  background: #f5d85b;
+}
 
+.why-feature-label > span:last-child {
+  color: rgba(255, 255, 255, 0.77);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1.75px;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.why-feature-arrow {
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  flex-shrink: 0;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-
-  color: #fff;
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-
   background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
+
+.why-feature-arrow:hover {
+  transform: translate(3px, -3px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .why-feature-content {
-  position: relative;
-  z-index: 2;
-
-  margin-top: 75px;
+  position: absolute;
+  z-index: 10;
+  top: 102px;
+  left: 31px;
+  right: 31px;
+  max-width: 330px;
 }
 
-.why-big-number {
-  margin-bottom: 12px;
+.why-feature-number {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+}
 
+.why-feature-number span {
   color: #f8df68;
-
   font-family: "Manrope", sans-serif;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+}
+
+.why-feature-number i {
+  width: 26px;
+  height: 1px;
+  display: block;
+  background: rgba(248, 223, 104, 0.72);
 }
 
 .why-feature h2 {
-  color: #fff;
-
+  margin: 0;
+  color: #ffffff;
   font-family: "Manrope", sans-serif;
-  font-size: clamp(2.6rem, 4vw, 4rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -2.5px;
+  font-size: 42px;
+  font-weight: 760;
+  line-height: 0.98;
+  letter-spacing: -2.4px;
 }
 
 .why-feature h2 em {
@@ -166,260 +306,196 @@
   font-style: normal;
 }
 
-.why-feature-content p {
-  max-width: 420px;
-
-  margin-top: 25px;
-
-  color: rgba(255, 255, 255, 0.74);
-
-  font-size: 14px;
-  line-height: 1.85;
+.why-feature-content > p {
+  max-width: 310px;
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 10px;
+  line-height: 1.62;
 }
 
+/* =========================================================
+   BOTTOM PANEL
+========================================================= */
 
-/* =========================================
-   GROWTH GRAPH
-========================================= */
-
-.why-growth {
+.why-approach-panel {
   position: absolute;
+  z-index: 12;
+  left: 28px;
+  right: 28px;
+  bottom: 18px;
+  min-height: 88px;
+  padding: 14px 18px 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 8px;
 
-  left: 0;
-  right: 0;
-  bottom: 75px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(22, 44, 26, 0.3) 0%,
+      rgba(8, 34, 18, 0.72) 100%
+    );
 
-  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.12);
 }
 
-.growth-line {
-  position: absolute;
+/* =========================================================
+   STEP
+========================================================= */
 
-  left: 8%;
-  bottom: 15px;
-
-  width: 84%;
-  height: 100px;
-
-  border-top: 2px solid #f8df68;
-
-  transform: rotate(-15deg);
-
-  transform-origin: left bottom;
-
-  opacity: 0.8;
-}
-
-.growth-line::after {
-  content: "";
-
-  position: absolute;
-
-  right: -3px;
-  top: -8px;
-
-  width: 16px;
-  height: 16px;
-
-  border-top: 2px solid #f8df68;
-  border-right: 2px solid #f8df68;
-
-  transform: rotate(45deg);
-}
-
-.growth-point {
-  position: absolute;
-
-  width: 9px;
-  height: 9px;
-
-  border-radius: 50%;
-
-  background: #f8df68;
-
-  box-shadow: 0 0 18px rgba(248, 223, 104, 0.65);
-}
-
-.point-one {
-  left: 17%;
-  bottom: 38px;
-}
-
-.point-two {
-  left: 48%;
-  bottom: 74px;
-}
-
-.point-three {
-  right: 10%;
-  bottom: 125px;
-}
-
-.growth-label {
-  position: absolute;
-
-  color: rgba(255, 255, 255, 0.4);
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.label-one {
-  left: 10%;
-  bottom: 2px;
-}
-
-.label-two {
-  right: 6%;
-  top: 0;
-}
-
-
-/* =========================================
-   FEATURE FOOTER
-========================================= */
-
-.why-feature-bottom {
-  position: absolute;
-
-  left: 42px;
-  right: 42px;
-  bottom: 32px;
-
+.approach-step {
+  min-width: 0;
   display: flex;
-  justify-content: space-between;
-
-  padding-top: 20px;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
 }
 
-.why-feature-bottom span {
-  color: rgba(255, 255, 255, 0.6);
-
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.approach-icon {
+  width: auto;
+  height: 24px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.approach-step:hover .approach-icon {
+  transform: translateY(-2px);
+  color: #f8df68;
+}
 
-/* =========================================
-   REASONS
-========================================= */
+.approach-step strong {
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.approach-step > span {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 6px;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   RIGHT REASONS
+========================================================= */
 
 .why-reasons {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .why-reason {
   display: grid;
-
-  grid-template-columns: 35px 58px 1fr;
-
-  gap: 22px;
-
+  grid-template-columns: 32px 58px minmax(0, 1fr);
   align-items: start;
-
-  padding: 28px 0;
-
+  gap: 21px;
+  padding: 27px 0;
   border-bottom: 1px solid rgba(47, 138, 74, 0.13);
+  transition: transform 0.3s ease;
 }
 
 .why-reason:first-child {
-  padding-top: 5px;
+  padding-top: 4px;
 }
 
 .why-reason:last-child {
   border-bottom: none;
 }
 
+.why-reason:hover {
+  transform: translateX(4px);
+}
+
 .reason-number {
   padding-top: 5px;
-
   color: #a4b5ab;
-
   font-family: "Manrope", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
 }
 
 .reason-icon {
   width: 54px;
   height: 54px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-radius: 16px;
-
   color: #2f8a4a;
-
-  background: #edf8f0;
-
   border: 1px solid rgba(47, 138, 74, 0.1);
-
+  border-radius: 15px;
+  background: #f2f8e8;
   transition:
     background 0.3s ease,
     color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .why-reason:hover .reason-icon {
+  color: #ffffff;
   background: #2f8a4a;
-  color: #fff;
-
   transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(47, 138, 74, 0.16);
+}
+
+.reason-content {
+  min-width: 0;
 }
 
 .reason-content h3 {
+  margin: 0;
   color: #123426;
-
   font-family: "Manrope", sans-serif;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .reason-content p {
-  max-width: 500px;
-
-  margin-top: 8px;
-
+  max-width: 510px;
+  margin: 8px 0 0;
   color: #667a70;
-
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.75;
 }
 
-
-/* =========================================
-   BOTTOM
-========================================= */
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
 
 .why-bottom {
-  margin-top: 60px;
-
-  padding: 25px 30px;
-
+  margin-top: 58px;
+  padding: 24px 30px;
   display: grid;
   grid-template-columns: 100px 1fr auto;
-
   align-items: center;
-
   gap: 30px;
-
-  border-radius: 18px;
-
-  background: #f5faf7;
-
   border: 1px solid rgba(47, 138, 74, 0.1);
+  border-radius: 18px;
+  background: #f5faf7;
 }
 
 .why-bottom > span {
   color: #35bab8;
-
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.8px;
@@ -427,110 +503,202 @@
 
 .why-bottom strong {
   color: #123426;
-
   font-family: "Manrope", sans-serif;
   font-size: 16px;
+  font-weight: 700;
 }
 
 .why-bottom a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-
   color: #2f8a4a;
-
   font-size: 12px;
   font-weight: 800;
-
+  text-decoration: none;
   white-space: nowrap;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .why-bottom a:hover {
   color: #126b3a;
+  transform: translateX(3px);
 }
 
+/* =========================================================
+   LAPTOP
+========================================================= */
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 950px) {
-
+@media (max-width: 1100px) {
   .why-layout {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
+    grid-template-columns: minmax(380px, 440px) minmax(0, 1fr);
+    gap: 48px;
   }
 
   .why-feature {
-    min-height: 500px;
+    height: 550px;
   }
 
-  .why-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
+  .why-feature h2 {
+    font-size: 39px;
   }
-
 }
 
+/* =========================================================
+   TABLET
+========================================================= */
 
-/* =========================================
+@media (max-width: 950px) {
+  .why-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+
+  .why-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .why-feature {
+    width: min(100%, 470px);
+    height: 560px;
+    margin: 0 auto;
+  }
+
+  .why-reasons {
+    width: min(100%, 700px);
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 650px) {
-
   .why-container {
     width: min(100% - 30px, 1240px);
   }
 
   .why-header {
-    margin-bottom: 35px;
+    margin-bottom: 34px;
+  }
+
+  .why-label {
+    font-size: 9px;
+  }
+
+  .why-header > p {
+    font-size: 13px;
+    line-height: 1.7;
   }
 
   .why-feature {
-    min-height: 510px;
+    width: min(100%, 390px);
+    height: 485px;
+    border-radius: 23px;
+  }
 
-    padding: 28px 25px;
+  .why-feature-image {
+    object-position: 74% 58%;
+    transform: scale(1.4);
+  }
 
-    border-radius: 22px;
+  .why-feature:hover .why-feature-image {
+    transform: scale(1.42);
+  }
+
+  .why-feature-top {
+    top: 22px;
+    left: 21px;
+    right: 21px;
+  }
+
+  .why-feature-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .feature-label-line {
+    width: 16px;
+  }
+
+  .why-feature-label > span:last-child {
+    font-size: 6px;
+    letter-spacing: 1.35px;
   }
 
   .why-feature-content {
-    margin-top: 60px;
+    top: 79px;
+    left: 21px;
+    right: 21px;
+    max-width: 290px;
+  }
+
+  .why-feature-number {
+    margin-bottom: 7px;
+  }
+
+  .why-feature-number span {
+    font-size: 8px;
   }
 
   .why-feature h2 {
-    font-size: 2.7rem;
-
-    letter-spacing: -2px;
+    font-size: 31px;
+    line-height: 0.98;
+    letter-spacing: -1.8px;
   }
 
-  .why-feature-content p {
-    font-size: 13px;
+  .why-feature-content > p {
+    max-width: 260px;
+    margin-top: 12px;
+    font-size: 8px;
+    line-height: 1.55;
   }
 
-  .why-growth {
-    bottom: 70px;
+  .why-approach-panel {
+    left: 18px;
+    right: 18px;
+    bottom: 14px;
+    min-height: 78px;
+    padding: 12px 14px 10px;
+    border-radius: 16px;
   }
 
-  .why-feature-bottom {
-    left: 25px;
-    right: 25px;
+  .approach-icon {
+    height: 21px;
+    margin-bottom: 4px;
+  }
+
+  .approach-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .approach-step strong {
+    font-size: 8px;
+  }
+
+  .approach-step > span {
+    font-size: 5.5px;
   }
 
   .why-reason {
-    grid-template-columns: 28px 50px 1fr;
-
+    grid-template-columns: 26px 48px minmax(0, 1fr);
     gap: 14px;
-
     padding: 22px 0;
+  }
+
+  .reason-number {
+    font-size: 9px;
   }
 
   .reason-icon {
     width: 48px;
     height: 48px;
+    border-radius: 14px;
   }
 
   .reason-content h3 {
@@ -539,39 +707,74 @@
 
   .reason-content p {
     font-size: 12px;
+    line-height: 1.7;
   }
 
   .why-bottom {
     grid-template-columns: 1fr;
-
     gap: 12px;
-
     margin-top: 35px;
-
     padding: 22px;
   }
 
-  .why-bottom a {
-    margin-top: 5px;
+  .why-bottom strong {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
 
-
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 390px) {
+  .why-feature {
+    height: 460px;
+  }
+
+  .why-feature-content {
+    top: 73px;
+  }
 
   .why-feature h2 {
-    font-size: 2.35rem;
+    font-size: 28px;
   }
 
-  .why-feature {
-    min-height: 500px;
+  .why-feature-content > p {
+    max-width: 242px;
+    font-size: 7.5px;
   }
 
-  .why-feature-bottom span {
-    font-size: 7px;
+  .why-feature-image {
+    object-position: 74% 58%;
+    transform: scale(1.45);
+  }
+
+  .why-approach-panel {
+    min-height: 74px;
+    padding: 10px 10px 9px;
+  }
+
+  .approach-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .approach-step strong {
+    font-size: 7.5px;
+  }
+
+  .approach-step > span {
+    font-size: 5px;
+  }
+
+  .why-reason {
+    grid-template-columns: 22px 44px minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .reason-icon {
+    width: 44px;
+    height: 44px;
   }
 }

@@ -1,6 +1,8 @@
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
+import aboutFinancial from "../../assets/about-financial.png";
+
 import "./About.css";
 
 const points = [
@@ -15,69 +17,97 @@ function About() {
     <section className="about section" id="about">
       <div className="about-container">
 
-        {/* LEFT VISUAL */}
+        {/* =========================================
+            LEFT IMAGE
+        ========================================= */}
         <motion.div
           className="about-visual"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
         >
-          <div className="about-card">
+          <div className="about-image-card">
 
-            <div className="about-card-top">
-              <span>GP</span>
+            {/* IMAGE */}
+            <img
+              src={aboutFinancial}
+              alt="Financial planning and future growth"
+              className="about-image"
+            />
 
-              <div className="about-growth-icon">
+            {/* IMAGE OVERLAY */}
+            <div className="about-image-overlay" />
+
+            {/* TOP CONTENT */}
+            <div className="about-image-top">
+              <div className="about-image-brand">
+                <strong>GP</strong>
+                <span>ASSOCIATES</span>
+              </div>
+
+              <a
+                href="#services"
+                className="about-image-arrow"
+                aria-label="Explore GP Associates services"
+              >
                 <ArrowUpRight size={20} />
-              </div>
+              </a>
             </div>
 
-            <div className="about-growth">
-              <div className="growth-bars">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div className="growth-arrow"></div>
-            </div>
-
-            <div className="about-card-bottom">
+            {/* BOTTOM CONTENT */}
+            <div className="about-image-bottom">
               <span>Your Goals</span>
+
               <strong>Your Future</strong>
             </div>
 
+            {/* DECORATIVE LINE */}
+            <div className="about-image-line" />
           </div>
 
-          {/* Floating Badge */}
-          <div className="about-floating-badge">
-            <div className="badge-dot"></div>
+          {/* FLOATING BADGE */}
+          <motion.div
+            className="about-floating-badge"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: 0.35,
+            }}
+          >
+            <div className="badge-dot" />
 
-            <div>
+            <div className="badge-content">
               <strong>Future Focused</strong>
               <span>Planning with purpose</span>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Decorative Circle */}
-          <div className="about-decoration"></div>
+          {/* BACKGROUND DECORATION */}
+          <div className="about-decoration" />
         </motion.div>
 
 
-        {/* RIGHT CONTENT */}
+        {/* =========================================
+            RIGHT CONTENT
+        ========================================= */}
         <motion.div
           className="about-content"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
         >
-
           <div className="section-label">
-            <span></span>
+            <span />
             ABOUT GP ASSOCIATES
           </div>
 
@@ -101,23 +131,21 @@ function About() {
           </p>
 
           <div className="about-points">
-
             {points.map((point) => (
               <div className="about-point" key={point}>
                 <CheckCircle2 size={18} />
                 <span>{point}</span>
               </div>
             ))}
-
           </div>
 
           <a href="#services" className="about-link">
             Explore our solutions
+
             <span>
               <ArrowUpRight size={17} />
             </span>
           </a>
-
         </motion.div>
 
       </div>

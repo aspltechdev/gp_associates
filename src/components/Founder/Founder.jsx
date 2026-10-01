@@ -7,6 +7,8 @@ import {
 import { motion } from "framer-motion";
 import "./Founder.css";
 
+import founder from "../../assets/founder.png";
+
 function Founder() {
   return (
     <section className="founder section" id="founder">
@@ -38,7 +40,7 @@ function Founder() {
             <div className="founder-image-frame">
 
               <img
-                src="/images/founder/gunasegaran-perumal.png"
+                src={founder}
                 alt="Gunasegaran Perumal - GP Associates"
               />
 

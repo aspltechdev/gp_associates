@@ -2,31 +2,36 @@ import { ArrowUpRight, Images } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Gallery.css";
 
+import img1 from "../../assets/professional_excellence.png";
+import img2 from "../../assets/client_conversations.png";
+import img3 from "../../assets/building_relationships.png";
+import img4 from "../../assets/professional_journey.png";
+
 const galleryItems = [
   {
     id: 1,
-    image: "/images/gallery/gallery-01.jpg",
+    image: img1,
     title: "Professional Excellence",
     category: "GP Associates",
     size: "large",
   },
   {
     id: 2,
-    image: "/images/gallery/gallery-02.jpg",
+    image: img2,
     title: "Client Conversations",
     category: "Financial Planning",
     size: "small",
   },
   {
     id: 3,
-    image: "/images/gallery/gallery-03.jpg",
+    image: img3,
     title: "Building Relationships",
     category: "Client Experience",
     size: "small",
   },
   {
     id: 4,
-    image: "/images/gallery/gallery-04.jpg",
+    image: img4,
     title: "Professional Journey",
     category: "Moments",
     size: "wide",

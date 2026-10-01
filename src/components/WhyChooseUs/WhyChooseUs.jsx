@@ -4,8 +4,13 @@ import {
   Target,
   Handshake,
   ArrowUpRight,
+  UsersRound,
+  BarChart3,
 } from "lucide-react";
 import { motion } from "framer-motion";
+
+import approachImage from "../../assets/why-choose.png";
+
 import "./WhyChooseUs.css";
 
 const reasons = [
@@ -39,12 +44,31 @@ const reasons = [
   },
 ];
 
+const steps = [
+  {
+    icon: UsersRound,
+    title: "Understand",
+    text: "Your goals",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Protect",
+    text: "What matters",
+  },
+  {
+    icon: BarChart3,
+    title: "Grow",
+    text: "Your future",
+  },
+];
+
 function WhyChooseUs() {
   return (
-    <section className="why-section section">
+    <section className="why-section section" id="why-us">
       <div className="why-container">
-
-        {/* HEADER */}
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
         <motion.div
           className="why-header"
           initial={{ opacity: 0, y: 25 }}
@@ -53,19 +77,23 @@ function WhyChooseUs() {
           transition={{ duration: 0.7 }}
         >
           <div className="why-label">
-            <span></span>
+            <span />
             WHY GP ASSOCIATES
           </div>
 
           <p>
-            Financial planning becomes more meaningful when it starts with
-            understanding people, not just products.
+            Financial planning becomes more meaningful when it starts
+            with understanding people, not just products.
           </p>
         </motion.div>
 
+        {/* =====================================================
+            MAIN LAYOUT
+        ===================================================== */}
         <div className="why-layout">
-
-          {/* LEFT FEATURE PANEL */}
+          {/* =====================================================
+              LEFT FEATURE CARD
+          ===================================================== */}
           <motion.div
             className="why-feature"
             initial={{ opacity: 0, x: -40 }}
@@ -73,19 +101,40 @@ function WhyChooseUs() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
           >
+            <img
+              src={approachImage}
+              alt="Family looking toward the future"
+              className="why-feature-image"
+            />
 
+            {/* overlay layers */}
+            <div className="why-overlay-top" />
+            <div className="why-overlay-side" />
+            <div className="why-overlay-warm" />
+            <div className="why-overlay-bottom-fade" />
+            <div className="why-orb" />
+
+            {/* top */}
             <div className="why-feature-top">
-              <span>THE GP APPROACH</span>
-
-              <div className="why-feature-arrow">
-                <ArrowUpRight size={20} />
+              <div className="why-feature-label">
+                <span className="feature-label-line" />
+                <span>THE GP APPROACH</span>
               </div>
+
+              <a
+                href="#contact"
+                className="why-feature-arrow"
+                aria-label="Start a conversation"
+              >
+                <ArrowUpRight size={18} strokeWidth={1.9} />
+              </a>
             </div>
 
+            {/* content */}
             <div className="why-feature-content">
-
-              <div className="why-big-number">
-                01
+              <div className="why-feature-number">
+                <span>01</span>
+                <i />
               </div>
 
               <h2>
@@ -95,43 +144,35 @@ function WhyChooseUs() {
               </h2>
 
               <p>
-                We take time to understand where you are today, what you
-                want to achieve tomorrow and how financial planning can
-                connect the two.
+                We take time to understand where you are today, what
+                you want to achieve tomorrow and how financial planning
+                can connect the two.
               </p>
-
             </div>
 
-            {/* DECORATIVE GRAPH */}
-            <div className="why-growth">
+            {/* bottom panel */}
+            <div className="why-approach-panel">
+              {steps.map((step) => {
+                const Icon = step.icon;
 
-              <div className="growth-line"></div>
+                return (
+                  <div className="approach-step" key={step.title}>
+                    <div className="approach-icon">
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
 
-              <div className="growth-point point-one"></div>
-              <div className="growth-point point-two"></div>
-              <div className="growth-point point-three"></div>
-
-              <span className="growth-label label-one">
-                TODAY
-              </span>
-
-              <span className="growth-label label-two">
-                TOMORROW
-              </span>
-
+                    <strong>{step.title}</strong>
+                    <span>{step.text}</span>
+                  </div>
+                );
+              })}
             </div>
-
-            <div className="why-feature-bottom">
-              <span>PLAN</span>
-              <span>PROTECT</span>
-              <span>GROW</span>
-            </div>
-
           </motion.div>
 
-          {/* RIGHT REASONS */}
+          {/* =====================================================
+              RIGHT REASONS
+          ===================================================== */}
           <div className="why-reasons">
-
             {reasons.map((reason, index) => {
               const Icon = reason.icon;
 
@@ -147,10 +188,7 @@ function WhyChooseUs() {
                     delay: index * 0.08,
                   }}
                 >
-
-                  <div className="reason-number">
-                    {reason.number}
-                  </div>
+                  <div className="reason-number">{reason.number}</div>
 
                   <div className="reason-icon">
                     <Icon size={22} strokeWidth={1.7} />
@@ -160,16 +198,15 @@ function WhyChooseUs() {
                     <h3>{reason.title}</h3>
                     <p>{reason.description}</p>
                   </div>
-
                 </motion.div>
               );
             })}
-
           </div>
-
         </div>
 
-        {/* BOTTOM STATEMENT */}
+        {/* =====================================================
+            BOTTOM CTA
+        ===================================================== */}
         <motion.div
           className="why-bottom"
           initial={{ opacity: 0, y: 20 }}
@@ -180,15 +217,15 @@ function WhyChooseUs() {
           <span>THE GOAL</span>
 
           <strong>
-            Make every financial decision with greater clarity and confidence.
+            Make every financial decision with greater clarity and
+            confidence.
           </strong>
 
           <a href="#contact">
             Start a conversation
-            <ArrowUpRight size={17} />
+            <ArrowUpRight size={17} strokeWidth={1.8} />
           </a>
         </motion.div>
-
       </div>
     </section>
   );
